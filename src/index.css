@@ -1,0 +1,43 @@
+:root {
+  --primary-color: #6366f1; /* Indigo */
+  --secondary-color: #ec4899; /* Pink */
+  --bg-color-dark: #0f172a; /* Slate 900 */
+  --bg-color-surface: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+  --text-color: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --ad-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color);
+  min-height: 100vh;
+  margin: 0;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.15), transparent 25%);
+  background-attachment: fixed;
+}
+
+/* Print styles — only show the slide canvas when user exports to PDF */
+@media print {
+  body * { visibility: hidden; }
+  .canvas-wrapper, .canvas-wrapper * { visibility: visible; }
+  .canvas-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: none;
+  }
+}
